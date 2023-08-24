@@ -14,6 +14,28 @@ Prueba tecnica para el puesto de desarrollador web y de integración Junior para
 
     Adicional a esto se utilizo la libreria random para generar arreglos aleatorios para el ejercicio, de entre 1 y 50 posiciones y con valores entre 1 y 200.
 
+    ```python
+    from random import *
+
+    def sort(arr):
+        sorted = False
+        while sorted == False:
+            sorted = True
+            for i in range(len(arr) - 1):
+                if arr[i] > arr[i+1]:
+                    tmp = arr[i]
+                    arr[i] = arr[i+1]
+                    arr[i+1] = tmp
+                    sorted = False
+        return arr
+
+    n = randint(1, 50)
+    testArr = [randint(1, 200) for i in range(n)]
+
+    print(testArr)
+    print(sort(testArr))
+    ```
+
 2. Resolución de problemas
 
     Crear un método que dado un entero N, devuelve un string dependiendo de:
@@ -31,6 +53,37 @@ Prueba tecnica para el puesto de desarrollador web y de integración Junior para
         function fizzbuzz(2) -> 2
 
     Nota: Puede usar cualquier lenguaje
+    **Solución**
+    Desarrollado con python, la función fizzbuzz la realice utilizando if, elif y else, haciendo la validación si el modulo del número ingresado divido entre este caso 3 y 5 es igual a 0 se retornara fizz, buzz o fizzbuzz, se realizaron las validaciónes de la siguiente manera:
+
+    | Divisible entre 3  | Divisible entre 5 | Divisible entre ambos | No es divisible entre ninguno |
+    | ------------------ | ----------------- | --------------------- | --- |
+    | número % 3 == 0 and número % 5 != 0  | número % 3 != 0 and número % 5 == 0  | número % 3 == 0 and número % 5 == 0  | no tenemos validación para este caso |
+    | return "Fizz"  | return "Buzz  | return "FizzBuzz" | return número | 
+
+    ```python
+    from random import *
+
+    def fizzbuzz(n):
+        if (n % 3 == 0) & (n % 5 == 0):
+            return "FizzBuzz"
+        elif (n % 3 == 0) & (n % 5 != 0):
+            return "Fizz"
+        elif (n % 3 != 0) & (n % 5 == 0):
+            return "Buzz"
+        else:
+            return n
+        
+    n = 31
+    print("Ejemplos")
+    print(fizzbuzz(20))  
+    print(fizzbuzz(9))  
+    print(fizzbuzz(15))  
+    print(fizzbuzz(2))
+    print("Prueba con los numeros del 1 al 30") 
+    for i in range(1, n):
+        print(fizzbuzz(i)) 
+    ```
 
 3. Desarrollo web y de integración
 

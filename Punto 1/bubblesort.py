@@ -1,3 +1,4 @@
+# Libreria random se utiliza netamente para generar arrays aleatorios, no se utilizo en la función para realizar el metodo bubblesort
 from random import *
 
 def sort(arr):

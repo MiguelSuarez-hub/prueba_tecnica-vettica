@@ -138,3 +138,5 @@ los usuarios para la autorización son:
 
 en el frontend tenemos una sola pagina, en la cual tenemos un boton de autorización y un componente para la visualización de las tarjetas
 
+![Alt text](image.png)
+

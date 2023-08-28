@@ -122,3 +122,19 @@ Consultar información de su tarjeta tullave incluyendo el saldo.
 La información debe ser almacenada en la base de datos manteniendo la integridad de la misma (A criterio del desarrollador)
 El front debe consumir los microservicios creados, y NO debe consumir directamente los servicios prestados por el API brindada.
 OPCIONAL. Entregar la solución en contenedores y con el orquestador respectivo (Sugerencia: Docker y docker-compose)
+
+ **Solución**
+
+Se desarrollo la aplicación web utilizando fatapi y python para el backend y Nextjs con react para el frontend, postgresql para la base de datos.
+
+Se utilizan 2 tipos de peticiones en el microservicio, post('/login') para realizar la autenticación por medio de JWT y get('{id}') para obtener la información de la tarjeta.
+
+los usuarios para la autorización son:
+
+    |   | Usuario 1 | Usuario 2 |
+    | ------------------ | ----------------- | --------------------- | 
+    | Usuario  | testuser  | testuser2  | 
+    | Contraseña  | vettica123  | prueba1234 |
+
+en el frontend tenemos una sola pagina, en la cual tenemos un boton de autorización y un componente para la visualización de las tarjetas
+
